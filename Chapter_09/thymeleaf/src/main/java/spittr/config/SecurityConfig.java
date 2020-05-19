@@ -9,7 +9,10 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 import org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl;
 
 @Configuration
-@EnableWebMvcSecurity
+@EnableWebMvcSecurity //@EnableWebSecurity 可以启用任意 Web 应用的安全性功能，不过，如果你的应用碰巧是使用 Spring MVC 开发的，那么就应该考虑使用 @EnableWeb-MvcSecurity 替代它
+/**
+ * Spring Security 必须配置在一个实现了 WebSecurityConfigurer 的 bean 中，或者（简单起见）扩展 WebSecurityConfigurerAdapter
+ */
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   
   @Override
